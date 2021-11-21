@@ -1,0 +1,11 @@
+name = "Hugo Dos"
+license = "ISC"
+licenselink = "https://github.com/martinmch/hugo-dos/blob/master/LICENSE"
+description = "A blog theme stylized with DOS aesthetics"
+homepage = "https://dos.martinmch.com"
+tags = ["blog", "simple", "clean", "starter"]
+features = ["blog"]
+
+[author]
+  name = "M. Christiansen"
+  homepage = "https://martinmch.com"

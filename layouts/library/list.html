@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+
+
+{{ .Content }}
+
+        {{ range .Data.Pages }}
+        {{ .Date.Format "January 02, 2006"}}&hellip;
+        <a href="{{ .URL }}">{{ .Title }} </a><br>
+        {{ end }}
+
+{{ partial "menu.html" . }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+<p>{{ .Date.Format "January 02, 2006"}}&hellip;
+{{ range $index, $element := split .Content "</p>" }}
+        {{/* We'd like to insert the date before the first paragraph.
+        Just like in the Doogie Howser episodes. It's not very neat,
+        since all other html elements in the first paragraph are removed
+        as well.*/}}
+        {{ if eq $index 0 }}
+            {{ $element | plainify | safeHTML }}</p>
+        {{ else}}
+            {{ $element | safeHTML }}</p>
+        {{ end }}
+{{ end }}
+
+{{ partial "menu.html" . }}
+
+{{ partial "footer.html" . }}

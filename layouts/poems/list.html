@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+
+{{ .Content }}
+<!-- This template is used when generating tags and category lists -->
+  {{ range (where .Data.Pages "Section" "!=" "") }}
+    <span class="date">{{ .Date.Format "June 01, 2006" }}&hellip;</span>
+    <a href="{{ .URL }}"> {{.Params.Author }} - {{ .Title }}</a><br>
+  {{ end }}
+<span>
+    <!--
+        <a href="{{ .Site.BaseURL }}/index.xml">subscribe via RSS</a></span>
+    -->
+</div>
+
+{{ partial "menu.html" . }}
+{{ partial "footer.html" . }}

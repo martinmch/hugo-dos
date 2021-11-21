@@ -1,0 +1,10 @@
+{{ partial "header.html" . }}
+
+<p>{{ .Date.Format "January 02, 2006"}}&hellip;
+{{ .Title }}.
+
+{{ .Content }}
+
+{{ partial "menu.html" . }}
+
+{{ partial "footer.html" . }}

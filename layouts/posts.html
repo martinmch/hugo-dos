@@ -1,0 +1,21 @@
+
+{{ partial "header.html" . }}
+
+
+{{ .Content }}
+
+<h2>Recent posts</h2>
+
+<div id="postlist">
+    <ul>
+  {{ range where .Data.Pages "Section" "blog" }}
+        <li> 
+          <a href="{{ .URL }}">{{ .Title }}</a> |
+          <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+        </li>
+  {{ end }}
+</ul>
+<span><a href="{{ .Site.BaseURL }}/index.xml">subscribe via RSS</a></span>
+</div>
+
+{{ partial "footer.html" . }}
